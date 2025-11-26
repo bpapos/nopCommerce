@@ -34,6 +34,9 @@
     const string hideDownloadableBlockAttributeName = "ProductPage.HideDownloadableBlock";
     var hideDownloadableBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideDownloadableBlockAttributeName, defaultValue: true);
 
+    const string hideMonthlyBlockAttributeName = "ProductPage.HideMonthlyBlock";
+    var hideMonthlyBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideMonthlyBlockAttributeName, defaultValue: true);
+
     const string hideRentalBlockAttributeName = "ProductPage.HideRentalBlock";
     var hideRentalBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideRentalBlockAttributeName, defaultValue: true);
 
@@ -93,7 +96,10 @@
                 <nop-card asp-name="product-specification-attributes" asp-icon="fas fa-gear" asp-title="@T("Admin.Catalog.Attributes.SpecificationAttributes")" asp-hide-block-attribute-name="@hideSpecificationAttributeBlockAttributeName" asp-hide="@hideSpecificationAttributeBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.SpecificationAttributes)">@await Html.PartialAsync("_CreateOrUpdate.SpecificationAttributes", Model)</nop-card>
                 <nop-card asp-name="product-giftcard" asp-icon="fas fa-gift" asp-title="@T("Admin.Catalog.Products.GiftCard")" asp-hide-block-attribute-name="@hideGiftCardBlockAttributeName" asp-hide="@hideGiftCardBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.IsGiftCard)">@await Html.PartialAsync("_CreateOrUpdate.GiftCard", Model)</nop-card>
                 <nop-card asp-name="product-downloadable" asp-icon="fas fa-download" asp-title="@T("Admin.Catalog.Products.DownloadableProduct")" asp-hide-block-attribute-name="@hideDownloadableBlockAttributeName" asp-hide="@hideDownloadableBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.DownloadableProduct)">@await Html.PartialAsync("_CreateOrUpdate.DownloadableProduct", Model)</nop-card>
-                <nop-card asp-name="product-rental" asp-icon="far fa-calendar-days" asp-title="@T("Admin.Catalog.Products.Rental")" asp-hide-block-attribute-name="@hideRentalBlockAttributeName" asp-hide="@hideRentalBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.IsRental)">@await Html.PartialAsync("_CreateOrUpdate.Rental", Model)</nop-card>
+
+                <nop-card asp-name="product-monthly" asp-icon="fas fa-file-invoice-dollar" asp-title="@T("Admin.Catalog.Products.MonthlyLicense")" asp-hide-block-attribute-name="@hideMonthlyBlockAttributeName" asp-hide="@hideMonthlyBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.HasMonthlyLicense)">@await Html.PartialAsync("_CreateOrUpdate.MonthlyLicense", Model)</nop-card>
+
+                <nop-card asp-name="product-rental"  asp-icon="far fa-calendar-days" asp-title="@T("Admin.Catalog.Products.Rental")"         asp-hide-block-attribute-name="@hideRentalBlockAttributeName"  asp-hide="@hideRentalBlock"  asp-advanced="@(!Model.ProductEditorSettingsModel.IsRental)">@await Html.PartialAsync("_CreateOrUpdate.Rental", Model)</nop-card>
                 <nop-card asp-name="product-recurring" asp-icon="fas fa-rotate-right" asp-title="@T("Admin.Catalog.Products.RecurringProduct")" asp-hide-block-attribute-name="@hideRecurringBlockAttributeName" asp-hide="@hideRecurringBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.RecurringProduct)">@await Html.PartialAsync("_CreateOrUpdate.Recurring", Model)</nop-card>
                 <nop-card asp-name="product-seo" asp-icon="fas fa-magnifying-glass-plus" asp-title="@T("Admin.Common.SEO")" asp-hide-block-attribute-name="@hideSeoBlockAttributeName" asp-hide="@hideSeoBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.Seo)">@await Html.PartialAsync("_CreateOrUpdate.Seo", Model)</nop-card>
                 <nop-card asp-name="product-related-products" asp-icon="fas fa-object-group" asp-title="@T("Admin.Catalog.Products.RelatedProducts")" asp-hide-block-attribute-name="@hideRelatedProductsBlockAttributeName" asp-hide="@hideRelatedProductsBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.RelatedProducts)">@await Html.PartialAsync("_CreateOrUpdate.RelatedProducts", Model)</nop-card>

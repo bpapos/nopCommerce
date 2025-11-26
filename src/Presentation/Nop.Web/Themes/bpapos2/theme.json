@@ -1,0 +1,7 @@
+﻿{
+  "SystemName": "BPAPOS2",
+  "FriendlyName": "BPAPOS v2",
+  "SupportRTL": true,
+  "PreviewImageUrl": "~/Themes/DefaultClean/preview.jpg",
+  "PreviewText": "Working BSS theme"
+}

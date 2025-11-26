@@ -3273,7 +3273,21 @@
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsRecurring.Hint">
     <Value>Check if it is a recurring product. For any product, you can define a recurring cycle to enable the system to automatically create orders that repeat when a customer purchases such products.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Catalog.Products.Fields.IsRental">
+
+  <LocaleResource Name="Admin.Catalog.Products.Fields.HasMonthlyLicense">
+    <Value>Monthly License</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.HasMonthlyLicense.Hint">
+    <Value>Check if this item has a monthly license fee associated. Note that license fees are billed directly by BSS.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.MonthlyLicenseFee">
+    <Value>Monthly License Fee</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.MonthlyLicenseFee.Hint">
+    <Value>Enter the monthly license fee that will be billed directly by BSS.</Value>
+  </LocaleResource>
+
+    <LocaleResource Name="Admin.Catalog.Products.Fields.IsRental">
     <Value>Is rental</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsRental.Hint">
@@ -4296,6 +4310,11 @@
   <LocaleResource Name="Admin.Catalog.Products.RelatedProducts.SaveBeforeEdit">
     <Value>You need to save the product before you can add related products for this product page.</Value>
   </LocaleResource>
+
+  <LocaleResource Name="Admin.Catalog.Products.MonthlyLicense">
+    <Value>Monthly License</Value>
+  </LocaleResource>
+
   <LocaleResource Name="Admin.Catalog.Products.Rental">
     <Value>Rental</Value>
   </LocaleResource>
@@ -8961,6 +8980,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.IsGiftCard">
     <Value>Is gift card</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.HasMonthlyLicense">
+    <Value>Monthly license</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.IsRental">
     <Value>Is rental</Value>

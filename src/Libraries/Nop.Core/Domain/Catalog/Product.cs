@@ -230,6 +230,16 @@ public partial class Product : BaseEntity, ILocalizedEntity, ISlugSupported, IAc
     public int RecurringTotalCycles { get; set; }
 
     /// <summary>
+    /// Gets or sets a value indicating whether the product has a monthly license fee
+    /// </summary>
+    public bool HasMonthlyLicense { get; set; }
+    
+    /// <summary>
+    /// Gets or sets a value indicating the monthly licnese fee
+    /// </summary>
+    public bool MonthlyLicenseFee { get; set; }
+
+    /// <summary>
     /// Gets or sets a value indicating whether the product is rental
     /// </summary>
     public bool IsRental { get; set; }
