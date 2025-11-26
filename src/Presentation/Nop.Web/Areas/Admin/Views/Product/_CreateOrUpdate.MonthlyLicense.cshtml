@@ -1,0 +1,26 @@
+﻿@model ProductModel
+@using Nop.Core.Domain.Catalog;
+@using Nop.Services
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="HasMonthlyLicense" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="HasMonthlyLicense" />
+            <span asp-validation-for="HasMonthlyLicense"></span>
+        </div>
+    </div>
+    <nop-nested-setting asp-for="HasMonthlyLicense">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="MonthlyLicenseFee" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="MonthlyLicenseFee" />
+                <span asp-validation-for="MonthlyLicenseFee"></span>
+            </div>
+        </div>
+    </nop-nested-setting>
+</div>
