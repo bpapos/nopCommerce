@@ -4310,9 +4310,11 @@
   <LocaleResource Name="Admin.Catalog.Products.RelatedProducts.SaveBeforeEdit">
     <Value>You need to save the product before you can add related products for this product page.</Value>
   </LocaleResource>
+
   <LocaleResource Name="Admin.Catalog.Products.MonthlyLicense">
     <Value>Monthly License</Value>
   </LocaleResource>
+
   <LocaleResource Name="Admin.Catalog.Products.Rental">
     <Value>Rental</Value>
   </LocaleResource>
@@ -8978,6 +8980,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.IsGiftCard">
     <Value>Is gift card</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.HasMonthlyLicense">
+    <Value>Monthly license</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.IsRental">
     <Value>Is rental</Value>

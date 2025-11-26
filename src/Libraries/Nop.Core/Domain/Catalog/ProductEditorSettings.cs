@@ -138,6 +138,11 @@ public partial class ProductEditorSettings : ISettings
     public bool RecurringProduct { get; set; }
 
     /// <summary>
+    /// Gets or sets a value indicating whether 'Monthly License' field is shown
+    /// </summary>
+    public bool HasMonthlyLicense { get; set; }
+
+    /// <summary>
     /// Gets or sets a value indicating whether 'Is rental' field is shown
     /// </summary>
     public bool IsRental { get; set; }
