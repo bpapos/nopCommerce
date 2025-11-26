@@ -720,6 +720,8 @@ public partial class CopyProductService : ICopyProductService
             RecurringCycleLength = product.RecurringCycleLength,
             RecurringCyclePeriod = product.RecurringCyclePeriod,
             RecurringTotalCycles = product.RecurringTotalCycles,
+            HasMonthlyLicense = product.HasMonthlyLicense,
+            MonthlyLicenseFee = product.MonthlyLicenseFee,
             IsRental = product.IsRental,
             RentalPriceLength = product.RentalPriceLength,
             RentalPricePeriod = product.RentalPricePeriod,

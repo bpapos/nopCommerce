@@ -209,6 +209,12 @@ public partial record ProductModel : BaseNopEntityModel,
     [NopResourceDisplayName("Admin.Catalog.Products.Fields.RecurringTotalCycles")]
     public int RecurringTotalCycles { get; set; }
 
+    [NopResourceDisplayName("Admin.Catalog.Products.Fields.HasMonthlyLicense")]
+    public bool HasMonthlyLicense { get; set; }
+
+    [NopResourceDisplayName("Admin.Catalog.Products.Fields.MonthlyLicenseFee")]
+    public decimal MonthlyLicenseFee { get; set; }
+
     [NopResourceDisplayName("Admin.Catalog.Products.Fields.IsRental")]
     public bool IsRental { get; set; }
 
