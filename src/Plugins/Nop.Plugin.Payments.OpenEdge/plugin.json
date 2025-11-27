@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "OpenEdge HostPay",
+  "SystemName": "Payments.OpenEdge",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.90" ],
+  "Author": "Business Software Solutions Inc.",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.OpenEdge.dll",
+  "Description": "This plugin allows paying with OpenEdge HostPay"
+}
