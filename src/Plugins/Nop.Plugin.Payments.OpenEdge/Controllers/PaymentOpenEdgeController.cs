@@ -20,7 +20,10 @@ using Nop.Services.Orders;
 using Nop.Services.Payments;
 using Nop.Services.Plugins;
 using Nop.Services.Security;
+//using Nop.Web.Areas.Admin.Factories;
+
 using Nop.Web.Factories;
+using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Mvc.Filters;
 using Nop.Web.Models.Order;
@@ -87,7 +90,10 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 
         #region Methods
 
-        [CheckPermission(StandardPermission.Configuration.MANAGE_PAYMENT_METHODS)]
+        [AutoValidateAntiforgeryToken]
+        [AuthorizeAdmin] //confirms access to the admin panel
+        [Area(AreaNames.ADMIN)] //specifies the area containing a controller or action
+        //[CheckPermission(StandardPermission.Configuration.MANAGE_PAYMENT_METHODS)]
         public async Task<IActionResult> Configure()
         {
 			//if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.ManagePaymentMethods))
@@ -177,7 +183,7 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 		{
 			//return "hello";
 			Order order = await _orderService.GetOrderByIdAsync(orderId);
-			OrderDetailsModel model = await _orderModelFactory.PrepareOrderDetailsModelAsync(order);
+            OrderDetailsModel model = await _orderModelFactory.PrepareOrderDetailsModelAsync(order);
 		
 			ViewBag.PaymentUrl = hostPayUrl;
 			return View("~/Plugins/Payments.OpenEdge/Views/Payment.cshtml", model);

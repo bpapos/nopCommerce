@@ -13,6 +13,7 @@ using Nop.Services.Messages;
 using Nop.Services.Orders;
 using Nop.Services.Payments;
 using Nop.Services.Plugins;
+using Nop.Web.Framework.Mvc.Routing;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +29,7 @@ namespace Nop.Plugin.Payments.OpenEdge
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ILocalizationService _localizationService;
         private readonly ILogger _logger;
+        private readonly INopUrlHelper _nopUrlHelper;
         private readonly INotificationService _notificationService;
         private readonly IOrderProcessingService _orderProcessingService;
         private readonly IOrderService _orderService;
@@ -58,6 +60,7 @@ namespace Nop.Plugin.Payments.OpenEdge
         public OpenEdgeProcessor(IHttpContextAccessor httpContextAccessor,
             ILocalizationService localizationService,
             ILogger logger,
+            INopUrlHelper nopUrlHelper,
             INotificationService notificationService,
             IOrderProcessingService orderProcessingService,
             IOrderService orderService,
@@ -68,6 +71,7 @@ namespace Nop.Plugin.Payments.OpenEdge
             _httpContextAccessor = httpContextAccessor;
             _localizationService = localizationService;
             _logger = logger;
+            _nopUrlHelper = nopUrlHelper;
             _notificationService = notificationService;
             _orderProcessingService = orderProcessingService;
             _orderService = orderService;
@@ -178,6 +182,8 @@ namespace Nop.Plugin.Payments.OpenEdge
         public override string GetConfigurationPageUrl()
         {
             return _webHelper.GetStoreLocation() + "Admin/PaymentOpenEdge/Configure";
+            //return _nopUrlHelper.RouteUrl(PayPalCommerceDefaults.Route.Configuration);
+
         }
 
         public string GetPublicViewComponentName()
