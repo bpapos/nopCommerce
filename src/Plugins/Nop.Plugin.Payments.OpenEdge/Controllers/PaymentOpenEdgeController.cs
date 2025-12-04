@@ -90,8 +90,8 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 
         #region Methods
 
-        [AutoValidateAntiforgeryToken]
         [AuthorizeAdmin] //confirms access to the admin panel
+        [HttpGet, ActionName("Configure")]
         [Area(AreaNames.ADMIN)] //specifies the area containing a controller or action
         //[CheckPermission(StandardPermission.Configuration.MANAGE_PAYMENT_METHODS)]
         public async Task<IActionResult> Configure()
@@ -128,7 +128,9 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 		}
 
 
-		[HttpPost, ActionName("Configure")]
+        [AutoValidateAntiforgeryToken]
+        [HttpPost]
+        [Area(AreaNames.ADMIN)] 
         [FormValueRequired("save")]
         [CheckPermission(StandardPermission.Configuration.MANAGE_PAYMENT_METHODS)]
 
@@ -178,8 +180,8 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 			return await Configure();
 		}
 
-
-		public async Task<IActionResult> Payment(int orderId, string hostPayUrl)
+        [Route("Plugins/PaymentOpenEdge/Payment")]
+        public async Task<IActionResult> Payment(int orderId, string hostPayUrl)
 		{
 			//return "hello";
 			Order order = await _orderService.GetOrderByIdAsync(orderId);
@@ -189,6 +191,7 @@ namespace Nop.Plugin.Payments.OpenEdge.Controllers
 			return View("~/Plugins/Payments.OpenEdge/Views/Payment.cshtml", model);
 		}
 
+		[Route("Plugins/PaymentOpenEdge/Return")]
 		public async Task<IActionResult> Return([FromQuery(Name = "params")] string xmlResult, [FromQuery(Name = "action")] string action)
 		{
 			Order order;

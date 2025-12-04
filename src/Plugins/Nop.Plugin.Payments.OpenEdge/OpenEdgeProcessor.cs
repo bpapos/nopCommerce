@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Nop.Core;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
+using Nop.Plugin.Payments.OpenEdge.Components;
 using Nop.Plugin.Payments.OpenEdge.HostPay;
 using Nop.Plugin.Payments.OpenEdge.Models;
 using Nop.Services.Configuration;
@@ -182,14 +183,14 @@ namespace Nop.Plugin.Payments.OpenEdge
         public override string GetConfigurationPageUrl()
         {
             return _webHelper.GetStoreLocation() + "Admin/PaymentOpenEdge/Configure";
-            //return _nopUrlHelper.RouteUrl(PayPalCommerceDefaults.Route.Configuration);
+            //return _nopUrlHelper.RouteUrl(OpenEdgeDefaults.Route.Configuration);
 
         }
 
-        public string GetPublicViewComponentName()
-        {
-            return "PaymentOpenEdge";
-        }
+        //public string GetPublicViewComponentName()
+        //{
+        //    return "PaymentOpenEdge";
+        //}
 
         public async Task<bool> HidePaymentMethodAsync(IList<ShoppingCartItem> cart)
         {
@@ -281,7 +282,8 @@ namespace Nop.Plugin.Payments.OpenEdge
 
         public Type GetPublicViewComponent()
         {
-            throw new NotImplementedException();
+            return typeof(PaymentOpenEdgeViewComponent);
+
         }
 
         #endregion

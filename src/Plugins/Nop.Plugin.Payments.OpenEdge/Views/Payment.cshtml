@@ -90,7 +90,8 @@
 
     <div class="main">
         <div class="pay-header">
-            @await Component.InvokeAsync("Logo")
+            @* @await Component.InvokeAsync("Logo") *@
+            @await Component.InvokeAsync(typeof(Nop.Web.Components.LogoViewComponent))
         </div>
         <div class="order-info">
             <div class=billing-info>
@@ -196,7 +197,7 @@
                                 @Html.Raw(Model.BillingAddress.FormattedCustomAddressAttributes)
                             </li>
                         }
-                        @if (Model.CustomValues != null)
+@*                         @if (Model.CustomValues != null)
                         {
                             foreach (var item in Model.CustomValues)
                             {
@@ -210,7 +211,7 @@
                                 </li>
                             }
                         }
-                    </ul>
+ *@                    </ul>
             </div>
 
 
