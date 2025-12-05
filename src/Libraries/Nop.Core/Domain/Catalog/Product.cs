@@ -237,7 +237,7 @@ public partial class Product : BaseEntity, ILocalizedEntity, ISlugSupported, IAc
     /// <summary>
     /// Gets or sets a value indicating the monthly licnese fee
     /// </summary>
-    public bool MonthlyLicenseFee { get; set; }
+    public decimal MonthlyLicenseFee { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the product is rental

@@ -1,0 +1,28 @@
+﻿@model ProductDetailsModel
+@*@using Nop.Web.Models.Catalog;*@
+
+@if (Model.ProductPrice.HasMonthlyLicense)
+
+{
+    <style>
+        .monthly-license {
+            /*border: 1px solid blue;*/
+            /*width: 400px;*/
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        .monthly-license-fee {
+            /*font-size: 12pt;*/
+            font-weight: 700;
+            /*width: 100px;*/
+            /*color: #ffffff;*/
+            /*background-color: #18476c;*/
+            /*padding-right: 15px;*/
+        }
+    </style>
+
+    <div class="monthly-license">
+        <span class="monthly-license-fee">+@Model.ProductPrice.MonthlyLicenseFee per month</span><span class="monthly-license-desc"> - Monthly software licensing &amp; support</span>
+    </div>
+}

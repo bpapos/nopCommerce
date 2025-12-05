@@ -512,6 +512,12 @@ public partial class ProductModelFactory : IProductModelFactory
             && product.IsShipEnabled
             && !product.IsFreeShipping;
 
+        if (product.HasMonthlyLicense)
+        {
+            model.HasMonthlyLicense = true;
+            model.MonthlyLicenseFee = await _priceFormatter.FormatPriceAsync(product.MonthlyLicenseFee);
+        }
+
         if (product.IsRental)
         {
             model.IsRental = true;
@@ -869,6 +875,7 @@ public partial class ProductModelFactory : IProductModelFactory
                     (await _dateTimeHelper.ConvertToUserTimeAsync(model.PreOrderAvailabilityStartDateTimeUtc.Value)).ToString("D");
             }
         }
+
         //rental
         model.IsRental = product.IsRental;
 

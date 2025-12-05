@@ -123,6 +123,8 @@
                             @await Html.PartialAsync("_ProductPrice", Model.ProductPrice, dataDictPrice)
                             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductPriceBottom, additionalData = Model })
 
+                            @await Html.PartialAsync("_ProductMonthlyLicense", Model)
+
                             @await Html.PartialAsync("_ProductTierPrices", Model.TierPrices)
 
                             var dataDictAddToCart = new ViewDataDictionary(ViewData);

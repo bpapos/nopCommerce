@@ -74,6 +74,10 @@ public partial record ProductDetailsModel : BaseNopEntityModel, IMetaTagsSupport
     public bool FreeShippingNotificationEnabled { get; set; }
     public string DeliveryDate { get; set; }
 
+    // BPA - Monthly license fees
+    public bool HasMonthlyLicense { get; set; }
+    public string MonthlyLicenseFee { get; set; }
+
     public bool IsRental { get; set; }
     public DateTime? RentalStartDate { get; set; }
     public DateTime? RentalEndDate { get; set; }
@@ -167,6 +171,11 @@ public partial record ProductDetailsModel : BaseNopEntityModel, IMetaTagsSupport
 
         public bool DisableBuyButton { get; set; }
         public bool DisableWishlistButton { get; set; }
+
+
+        //BPA - Monthly license fees
+        public bool HasMonthlyLicense { get; set; }
+        public string MonthlyLicenseFee { get; set; }
 
         //rental
         public bool IsRental { get; set; }
